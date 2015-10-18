@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <ul>
+   <%if(title ==='Bear By Id'){%>
+
+    <li>
+    	<%=bears.name%>
+    </li>
+
+    
+
+    <% } else {%>
+    	<%bears.forEach(function(bear){%>
+			<li>
+				<%=bear.name%>
+				
+			</li>
+    	<%})%>
+    	<%}%>
+
+	<form action="/api/bears" method="post" name='addbear'>
+		<input type="text" name="name">
+		<button type="Submit"> Submit</button>
+	</form>
+    
+
+    </ul>
+  </body>
+</html>
